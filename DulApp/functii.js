@@ -38,6 +38,32 @@ function myFunctionn() {
     } 
   }
 }
+function myFunctionok(var i) {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  if(var==1){
+  input = document.getElementById("myInput1");
+  table = document.getElementById("tabelpersonal1");
+  }
+  else if(var==2)
+  {  
+  	input = document.getElementById("myInput2");
+ 	 table = document.getElementById("tabelpublic");
+  }
+  filter = input.value.toUpperCase();
+  tr = table.getElementsByTagName("tr");
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
 function myDelete()
 {
 	var id;
